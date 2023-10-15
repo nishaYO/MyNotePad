@@ -9,9 +9,9 @@ export default function Home() {
   const formatDate = (dateString) => {
     const options = { month: 'long', day: 'numeric' };
     const formattedDate = new Date(dateString).toLocaleDateString(undefined, options);
-    const [month, date] = formattedDate.split(' ');
+    const [month, day] = formattedDate.split(' ');
   
-    return { month, date };
+    return { month, day };
   };
   
   const addNote = () => {
