@@ -6,16 +6,16 @@ import { useState } from 'react'
 export default function Home() {
   const [note, setNote] = useState({ title: "", desc: "", date: "" });
 
-  const formatDate = (dateString) => {
+  const formatDate = (date) => {
     const options = { month: 'long', day: 'numeric' };
-    const formattedDate = new Date(dateString).toLocaleDateString(undefined, options);
+    const formattedDate = date.toLocaleDateString(undefined, options);
     const [month, day] = formattedDate.split(' ');
   
     return { month, day };
   };
   
   const addNote = () => {
-    const currentDate = formatDate(new Date().toLocaleString());
+    const currentDate = formatDate(new Date());
     let newNote = { title: note.title, desc: note.desc, date: currentDate };
   
     let notes = localStorage.getItem("notes");

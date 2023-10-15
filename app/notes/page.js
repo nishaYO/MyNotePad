@@ -35,7 +35,7 @@ export default function Home() {
     <div className="container px-5 py-24 mx-auto">
       <div className="flex flex-wrap -mx-0 -my-8 ">
       
-    {notes ? (
+    {notes  && notes.length > 0 ? (
     notes.map(item => {
                     return   <div class="py-4 px-4 lg:w-1/5 border-2 border-blue-200 bg-blue-100 rounded-md mx-4 my-2">
                     <div class="h-2/3 flex items-start">
@@ -57,7 +57,8 @@ export default function Home() {
                         </a>
                   </div>})
                             ) : (
-                              <p>No notes available.</p>
+                              <p className="w-full text-center">Your notes will display here.</p>
+            
                             )}
     </div> 
   </div>
